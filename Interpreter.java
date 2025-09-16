@@ -31,13 +31,13 @@ class Interpreter {
 
         final InputStreamReader input = new InputStreamReader(System.in);
         final BufferedReader reader = new BufferedReader(input);
-        final Scanner scanner = new Scanner();
-
+       
         while(true) {
             
             System.out.print("> ");
             String line = reader.readLine();
-            List<Token> tokens = scanner.scan(line);
+            final Scanner scanner = new Scanner(line);
+            List<Token> tokens = scanner.scan();
             System.out.println(tokens);
         }
     }
